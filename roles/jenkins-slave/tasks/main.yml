@@ -42,6 +42,7 @@
   dnf: name=couchdb state=latest
   tags:
     - couchdb
+    - update-packages
 
 - name: Apply CouchDB tuning suited for unit tests
   copy: src=couchdb/default.ini dest=/etc/couchdb/default.ini owner=root group=root mode=0644
