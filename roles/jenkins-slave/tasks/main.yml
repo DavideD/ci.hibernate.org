@@ -37,6 +37,12 @@
   tags:
     - jenkins
 
+- name: Give jenkins permission to update packages
+  lineinfile: dest=/etc/sudoers state=present regexp='^jenkins ALL\=' line='jenkins ALL=(ALL) NOPASSWD:/usr/bin/dnf update -y' validate='/usr/sbin/visudo -cf %s'
+  tags:
+    - jenkins
+    - sudoer
+
 # Install CouchDB
 - name: Get the the latest version of CouchDB
   dnf: name=couchdb state=latest
