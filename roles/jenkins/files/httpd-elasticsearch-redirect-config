@@ -1,0 +1,10 @@
+Listen 39200
+
+<VirtualHost *:39200> 
+  ServerName elasticsearch.ci.hibernate.org
+  ProxyPreserveHost Off
+  ProxyRequests Off
+  ProxyPass / search-elasticsearch-ci-jenkins-5qfuyb7khmg3ymbrgqgj5ao3gq.us-east-1.es.amazonaws.com:80
+  ProxyPassReverse / search-elasticsearch-ci-jenkins-5qfuyb7khmg3ymbrgqgj5ao3gq.us-east-1.es.amazonaws.com:80
+</VirtualHost>
+
